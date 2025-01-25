@@ -18,6 +18,10 @@ const Home = () => {
       <div className="max-w-7xl mx-auto px-6 md:px-3">
         <Faq></Faq>
       </div>
+{/* this needs to be changed */}
+      <div className="max-w-7xl mx-auto px-6 md:px-3">
+        <MiddleImage></MiddleImage>
+      </div>
     </div>
   );
 };
