@@ -10,7 +10,7 @@ const MenuItems = ({ item }) => {
         />
       </div>
 
-      <h2 className="mt-2 text-xl font-semibold text-gray-800 dark:text-white md:mt-0">
+      <h2 className="mt-2 md:text-2xl text-xl font-semibold text-gray-800 dark:text-white md:mt-0">
         {name}
       </h2>
 

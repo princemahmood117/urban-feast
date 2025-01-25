@@ -1,4 +1,5 @@
 import Banner from "../Components/Banner/Banner";
+import Faq from "../Components/Faq/Faq";
 import MiddleImage from "../Components/MiddleImage/MiddleImage";
 import PopularMenu from "../Components/PopularMenu/PopularMenu";
 
@@ -11,7 +12,11 @@ const Home = () => {
       <MiddleImage></MiddleImage>
 
       <div className="max-w-7xl mx-auto px-6 md:px-3">
-      <PopularMenu></PopularMenu>
+        <PopularMenu></PopularMenu>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-6 md:px-3">
+        <Faq></Faq>
       </div>
     </div>
   );
