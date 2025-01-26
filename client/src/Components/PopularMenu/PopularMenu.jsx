@@ -1,20 +1,23 @@
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import MenuItems from "../MenuItems/MenuItems";
 import { motion, AnimatePresence } from "framer-motion"; // Import Framer Motion
+import useMenu from "../../hooks/useMenu";
 
 const PopularMenu = () => {
-  const [menu, setMenu] = useState([]);
   const [visibleCount, setVisibleCount] = useState(3); // Initial visible items
+  const [menu] = useMenu()
+  const polularMenu = menu.filter(item => item.category === "popular")
 
+  // const [menu, setMenu] = useState([]);
   // Fetch menu data
-  useEffect(() => {
-    fetch("menu.json")
-      .then((res) => res.json())
-      .then((data) => {
-        const popularItems = data.filter((item) => item.category === "popular");
-        setMenu(popularItems);
-      });
-  }, []);
+  // useEffect(() => {
+  //   fetch("menu.json")
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       const popularItems = data.filter((item) => item.category === "popular");
+  //       setMenu(popularItems);
+  //     });
+  // }, []);
 
   // Handle toggle between "View More" and "Show Less"
   const handleToggle = () => {
@@ -43,7 +46,7 @@ const PopularMenu = () => {
       {/* Menu items */}
       <div className="grid md:grid-cols-2 lg:grid-cols-3 md:gap-4 gap-2 cursor-pointer">
         <AnimatePresence>
-          {menu.slice(0, visibleCount).map((item) => (
+          {polularMenu.slice(0, visibleCount).map((item) => (
             <motion.div
               key={item._id}
               variants={fadeInVariant}

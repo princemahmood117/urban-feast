@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import Banner from "../Components/Banner/Banner";
 import Faq from "../Components/Faq/Faq";
 import MiddleImage from "../Components/MiddleImage/MiddleImage";
@@ -7,6 +8,9 @@ import PopularMenu from "../Components/PopularMenu/PopularMenu";
 const Home = () => {
   return (
     <div>
+      <Helmet>
+        <title>Urban Feast</title>
+      </Helmet>
       <div className="px-2">
         <Banner></Banner>
       </div>

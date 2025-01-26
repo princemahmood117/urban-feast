@@ -1,7 +1,7 @@
+import React from "react";
 
-const MenuItems = ({ item }) => {
-  const { image, price, reciepe, name } = item;
-
+const MenuCard = ({ item }) => {
+  const { image, name, reciepe, price } = item;
   return (
     <div className="w-full max-w-md px-6 py-4 mt-8 bg-white rounded-lg shadow-md dark:bg-gray-800 flex flex-col justify-between h-[200px]">
       {/* Image Section */}
@@ -33,5 +33,4 @@ const MenuItems = ({ item }) => {
   );
 };
 
-export default MenuItems;
-
+export default MenuCard;
