@@ -9,7 +9,7 @@ const Faq = () => {
         Frequently asked questions
       </h1>
       <div className="flex md:px-6 px-4 justify-around">
-        <div className="w-1/3  hidden md:block border">
+        <div className="w-1/3  hidden md:block">
           <Lottie style={{ height: "500px"}} animationData={questions}></Lottie>
         </div>
 

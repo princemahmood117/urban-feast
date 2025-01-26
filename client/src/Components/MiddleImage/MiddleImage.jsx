@@ -1,6 +1,7 @@
 const MiddleImage = () => {
   return (
  <div className="md:px-0 px-3">
+  <hr className="my-6 max-w-7xl mx-auto" />
        <div
       className="hero max-w-7xl mx-auto mt-4 rounded-sm"
       style={{
