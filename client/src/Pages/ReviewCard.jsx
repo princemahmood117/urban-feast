@@ -5,7 +5,7 @@ import { Helmet } from "react-helmet";
 const ReviewCard = ({ review }) => {
   const { name, image, date, short, details, rating } = review;
   return (
-    <div className="max-w-xl overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800 md:p-4 p-3 mt-3">
+    <div className="max-w-xl overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800 md:p-4 p-3 mt-18">
       <Helmet>
         <title>Customer reviews</title>
       </Helmet>

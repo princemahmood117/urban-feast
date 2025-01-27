@@ -135,7 +135,7 @@ export default function Navbar() {
             ) : (
               <Link
                 to={"/login"}
-                className="my-2 text-gray-700 rounded-md transition duration-300 md:mx-4 md:my-0 font-[roboto]"
+                className="my-2 rounded-md transition duration-300 md:mx-4 md:my-0 font-[roboto]"
               >
                 Login
               </Link>

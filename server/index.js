@@ -6,7 +6,7 @@ const app = express()
 
 
 const corsOption = {
-    origin : ['http://localhost:5173'],
+    origin : ['http://localhost:5173','https://luminous-caramel-79aab2.netlify.app','https://firebase.google.com','https://console.firebase.google.com/u/0','https://console.firebase.google.com/u/0/project/urban-feast-8243a/overview', 'https://console.firebase.google.com/u/0/project/urban-feast-8243a/authentication/users'],
     credentials : true,
     optionSuccessStatus : 200,
 }
@@ -31,13 +31,11 @@ const client = new MongoClient(uri, {
 
 async function run() {
   try {
-    await client.connect();
+ 
     const menuCollection = client.db('urbanFeast').collection('menu')
     const reviewCollection = client.db('urbanFeast').collection('review')
     const orderCollection = client.db('urbanFeast').collection('order')
-    // Connect the client to the server	(optional starting in v4.7)
     
-
 
     app.get('/menu', async(req,res) => {
         const result = await menuCollection.find().toArray()
