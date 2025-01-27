@@ -6,7 +6,7 @@ const Reviews = () => {
     const [reviews,setReviews] = useState([])
 
     useEffect(()=> {
-        fetch('reviews.json')
+        fetch(`${import.meta.env.VITE_URL}/review`)
         .then(res => res.json())
         .then(data => setReviews(data))
     },[])

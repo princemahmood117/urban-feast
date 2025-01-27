@@ -3,7 +3,7 @@ const Footer = () => {
     <div>
       <footer className="footer sm:footer-horizontal  flex justify-around p-10">
         <aside>
-          <img className="h-24 w-24" src="logo.png" alt="" />
+          <img className="h-24 w-24" src='logo.png' alt="" />
           <p className="font-[roboto]">
             Urban Feast Restaurent
             <br />

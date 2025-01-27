@@ -1,11 +1,25 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { Helmet } from "react-helmet";;
-import useMenu from "../hooks/useMenu";
+// import useMenu from "../hooks/useMenu";
 import MenuCard from "./MenuCard";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const Menu = () => {
-  const [menu] = useMenu();
+  // const [menu] = useMenu();
+
+  const [menu,setMenu] = useState([])
+
+  console.log(menu);
+
+  useEffect(()=> {
+    const getMenu = async() =>{
+      const {data} = await axios.get(`${import.meta.env.VITE_URL}/menu`)
+      setMenu(data)
+    }
+    getMenu()
+  },[])
 
   const fadeInVariant = {
     hidden: { opacity: 0, y: 20 },
@@ -16,7 +30,7 @@ const Menu = () => {
       <Helmet>
         <title>Our Menu</title>
       </Helmet>
-      <Link>
+      <div>
         <section className="mt-4">
           <hr className="my-5" />
           <h1 className="text-center md:text-4xl text-2xl font-[arial] font-semibold my-2">
@@ -40,7 +54,7 @@ const Menu = () => {
             ))}
           </AnimatePresence>
         </div>        
-      </Link>
+      </div>
     </div>
   );
 };

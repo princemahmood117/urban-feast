@@ -1,9 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const MenuCard = ({ item }) => {
-  const { image, name, reciepe, price } = item;
+  const { image, name, reciepe, price, _id } = item;
   return (
-    <div className="w-full max-w-md px-6 py-4 mt-8 bg-white rounded-lg shadow-md dark:bg-gray-800 flex flex-col justify-between h-[200px]">
+    <Link to={`/menu/${_id}`} className="w-full max-w-md px-6 py-4 mt-8 bg-white rounded-lg shadow-md dark:bg-gray-800 flex flex-col justify-between h-[200px]">
       {/* Image Section */}
       <div className="flex justify-center -mt-12 md:justify-end">
         <img
@@ -29,7 +30,7 @@ const MenuCard = ({ item }) => {
           {price}/-
         </span>
       </div>
-    </div>
+    </Link>
   );
 };
 
