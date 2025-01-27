@@ -1,31 +1,30 @@
 import { useContext } from "react";
-import toast from "react-hot-toast";
-import { Navigate, useLoaderData } from "react-router-dom";
+
+import {  useLoaderData, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Components/Auth/AuthProvider";
 import axios from "axios";
+import toast from "react-hot-toast";
 
 const MenuDetails = () => {
   const menu = useLoaderData();
   const { image, name, reciepe, price, _id, category } = menu;
   const {user} = useContext(AuthContext)
-  console.log(menu);
+  const navigate = useNavigate()
+  // console.log(menu);
  
   const handleOrderSubmit = async(e) => {
     e.preventDefault()
 
-        const foodId = _id;
-        const price = parseInt(form.price.value);
+        // const foodId = _id;
+        const foodPrice = parseInt(price);
         const email = user?.email;
         const status = 'Pending'
- 
-      
-      const form = e.target;
 
-      // data for bids
+      // data for order
       const foodData = {
-          foodId,
+          foodId:_id,
           name,
-          price,
+          price : foodPrice ,
           reciepe,
           image, 
           category,
@@ -35,15 +34,15 @@ const MenuDetails = () => {
       console.table(foodData);
 
       try {
-        const {data} = await axios.post(`/order`, foodData)
-        console.log(data); 
+        const {data} = await axios.post(`${import.meta.env.VITE_URL}/order`, foodData)
+        // console.log(data); 
         toast.success('Item ordered successfully')
-        Navigate('/menu')
+        navigate('/menu')
       }
 
       catch(error) {
-        toast.error(error);
-        form.reset()
+        toast.error(error.message);
+        // form.reset()
       }
       
   }
@@ -63,7 +62,7 @@ const MenuDetails = () => {
             <p>{reciepe}</p>
             <p><span className="font-bold font-[roboto]">Price :</span> {price}/- </p>
 
-            <button onSubmit={handleOrderSubmit} className="btn">Order Now</button>
+            <button onClick={handleOrderSubmit} className="btn">Order Now</button>
           </div>
         </div>
       </section>

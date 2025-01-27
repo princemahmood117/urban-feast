@@ -9,7 +9,7 @@ export default function Navbar() {
   const handleLogout = async () => {
     try {
       await logOut();
-      console.log("User logged out successfully");
+      // console.log("User logged out successfully");
     } catch (error) {
       console.error("Logout failed:", error);
     }
@@ -20,7 +20,7 @@ export default function Navbar() {
       <div className="container px-6 py-4 mx-auto md:flex md:justify-between md:items-center">
         <div className="flex items-center justify-between">
           <Link to={"/"}>
-            <h1 className="text-white md:text-3xl text-xl">
+            <h1 className="text-black dark:text-white md:text-3xl text-xl">
               <span className="font-[outfit]">Urban</span>{" "}
               <span className="font-[roboto]">Feast</span>
             </h1>
@@ -79,7 +79,7 @@ export default function Navbar() {
         >
           <div className="flex flex-col md:flex-row md:mx-6 justify-center items-center md:justify-center md:items-center">
             <Link
-              className="my-2 text-gray-700 font-[roboto] transition-colors duration-300 transform hover:text-blue-600 dark:hover:text-blue-400 md:mx-4 md:my-0"
+              className="my-2 font-[roboto] transition-colors duration-300 transform hover:text-blue-600 dark:hover:text-blue-400 md:mx-4 md:my-0"
               to="/"
             >
               Home
@@ -87,13 +87,13 @@ export default function Navbar() {
 
             <Link
               to={"/menu"}
-              className="my-2 text-gray-700 font-[roboto] transition-colors duration-300 transform hover:text-blue-600 dark:hover:text-blue-400 md:mx-4 md:my-0"
+              className="my-2 font-[roboto] transition-colors duration-300 transform hover:text-blue-600 dark:hover:text-blue-400 md:mx-4 md:my-0"
             >
               Menu
             </Link>
 
             <Link
-              className="my-2 text-gray-700 font-[roboto] transition-colors duration-300 transform hover:text-blue-600 dark:hover:text-blue-400 md:mx-4 md:my-0"
+              className="my-2  font-[roboto] transition-colors duration-300 transform hover:text-blue-600 dark:hover:text-blue-400 md:mx-4 md:my-0"
               to={"/contact"}
             >
               Contact
@@ -101,7 +101,7 @@ export default function Navbar() {
 
             <Link
               to={"/reviews"}
-              className="my-2 text-gray-700 font-[roboto] transition-colors duration-300 transform hover:text-blue-600 dark:hover:text-blue-400 md:mx-4 md:my-0"
+              className="my-2  font-[roboto] transition-colors duration-300 transform hover:text-blue-600 dark:hover:text-blue-400 md:mx-4 md:my-0"
             >
               Customer Reviews
             </Link>
@@ -126,6 +126,9 @@ export default function Navbar() {
                 >
                   <li>
                     <button className="font-[roboto]" onClick={handleLogout}>Logout</button>
+                  </li>
+                  <li>
+                    <Link to={'/my-order'} className="font-[roboto]">My order</Link>
                   </li>
                 </ul>
               </div>

@@ -5,13 +5,16 @@ import MenuCard from "./MenuCard";
 // import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { Triangle } from "react-loader-spinner";
+import { useContext } from "react";
+import { AuthContext } from "../Components/Auth/AuthProvider";
 
 const Menu = () => {
   // const [menu] = useMenu();
 
   const [menu,setMenu] = useState([])
 
-  console.log(menu);
+  const {loading} = useContext(AuthContext)
 
   useEffect(()=> {
     const getMenu = async() =>{
@@ -25,6 +28,22 @@ const Menu = () => {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   };
+
+    if (loading) {
+      return (
+        <div className="flex justify-center items-center">
+          <Triangle
+            visible={true}
+            height="80"
+            width="80"
+            color="#e74c3c"
+            ariaLabel="triangle-loading"
+            wrapperStyle={{}}
+            wrapperClass=""
+          />
+        </div>
+      );
+    }
   return (
     <div className="ml-6 lg:ml-14">
       <Helmet>
@@ -32,7 +51,7 @@ const Menu = () => {
       </Helmet>
       <div>
         <section className="mt-4">
-          <hr className="my-5" />
+          
           <h1 className="text-center md:text-4xl text-2xl font-[arial] font-semibold my-2">
             Our Menu
           </h1>

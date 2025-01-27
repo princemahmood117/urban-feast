@@ -10,7 +10,7 @@ const Reviews = () => {
         .then(res => res.json())
         .then(data => setReviews(data))
     },[])
-    console.log(reviews);
+    // console.log(reviews);
     return (
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 p-4" >
             {

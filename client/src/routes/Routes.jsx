@@ -10,6 +10,7 @@ import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import PrivateRoute from "../Pages/PrivateRoute";
 import Contact from "../Pages/Contact";
+import MyOrder from "../Pages/MyOrder";
 
 
   export const router = createBrowserRouter([
@@ -40,6 +41,10 @@ import Contact from "../Pages/Contact";
         {
             path: '/contact',
             element : <Contact></Contact>
+        },
+        {
+            path: '/my-order',
+            element : <MyOrder></MyOrder>
         },
         {
             path: '/menu/:id',

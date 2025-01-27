@@ -1,6 +1,11 @@
+import { Helmet } from "react-helmet";
+
 const Contact = () => {
   return (
     <div>
+        <Helmet>
+            <title>Contact us</title>
+        </Helmet>
       <section className="">
         <div className="container px-6 py-10 mx-auto">
           <div>
@@ -71,7 +76,7 @@ const Contact = () => {
                   </svg>
                 </span>
 
-                <h2 className="mt-4 text-base font-medium text-gray-800 ">
+                <h2 className="mt-4 text-base font-medium ">
                   Dine In
                 </h2>
                 <p className=" text-sm text-gray-500 ">
